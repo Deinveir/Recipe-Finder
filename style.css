@@ -260,6 +260,7 @@ img{
         align-items: center;
         justify-content: flex-start;
         gap: 10px;
+        min-height: 100vh;
     }
 
     header{
@@ -294,6 +295,7 @@ img{
         align-items: center;
         justify-content: flex-start;
         gap: 10px;
+        min-height: 100vh;
     }
 
     header{
@@ -319,5 +321,12 @@ img{
         align-items: center;
         justify-content: flex-start;
         gap: 10px;
+        min-height: 100vh;
+    }
+
+    header img{
+        width: 100px;
+        margin-right: 40px;
+        cursor: pointer;
     }
 }
