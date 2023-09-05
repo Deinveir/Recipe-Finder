@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: #d8c6ba;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(gray, white);
+    min-height: 100vh;
+}
+
+.mobile-container{
+    background: #617246;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+}
+
+header img{
+    width: 100px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+#search-btn{
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.search-input{
+    outline: none;
+    border: none;
+    background-color: #d8c6ba;
+    height: 20px;
+    border-radius: 10px;
+    color: black;
+    padding: 5px 10px;
+    min-width: 5px;
+    transition: all .5s;
+}
+
+.search-input:focus{
+    outline: 2px solid black;
+}
+
+img{
+    width: 100%;
+}
+
+.fav-container{
+    text-align: center;
+    background-color: #314021;
+    width: 100%;
+    /* padding-bottom: 40px; */
+    min-height: 70px;
+}
+
+.fav-container ul{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.fav-container ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    font-size: 13px;
+    font-weight: 400;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.fav-container ul li span{
+    position: absolute;
+    bottom: -1rem;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90px;
+    white-space: nowrap;
+    z-index: 2;
+    transition: all .5s;
+    padding: 3px;
+}
+
+.fav-container ul li span:hover{
+    overflow: visible;
+    white-space: wrap;
+    background-color: #0c0d07;
+    border-radius: 10px;
+}
+
+.fav-container ul li:hover div{
+    display: flex;
+}
+
+.close-btn{
+    color: white;
+    background: red;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 1;
+    cursor: pointer;
+    display: none;
+}
+
+.fav-container ul li img{
+    border-radius: 100%;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+}
+
+.meals{
+    position: relative;
+    padding: 10px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.meal{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #0c0d07;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3px);
+    z-index: 2;
+}
+
+.random{
+    position: absolute;
+    top: 15px;
+    z-index: 1;
+    left: 15px;
+    background-color: #314021;
+    padding: 2px 5px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.meal-header img{
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+
+.meal-body{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+}
+
+.meal-body h4{
+    margin: 0;
+}
+
+.meal-body .fav-btn{
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: rgb(194, 194, 194);
+}
+
+.fav-btn.active{
+    color: rgb(205, 51, 51);
+}
+
+.recipe-div{
+    background-color: #272401;
+    color: #dfe5f3;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* position: absolute; */
+    z-index: -1;
+    top: 19rem;
+    /* right: 10px;
+    left: 10px; */
+    transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.recipe-div-active{
+    display: none;
+    transition: all .5s;
+}
+
+.ingredients ul{
+    padding: 0;
+    list-style-type: none;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 20px;
+}
+
+
+.recipe-div div{
+    font-size: 13px;
+}
+
+.recipe-div div p{
+    line-height: 1.2rem;
+}
+
+.recipe-div h4{
+    margin: 0;
+}
+
+.ingredients{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
