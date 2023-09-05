@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(gray, white);
+    background: rgb(29, 27, 3);
     min-height: 100vh;
     padding: 0;
 }
