@@ -115,7 +115,7 @@ function addMeal(randomMeal, random = true){
         recipeDiv.classList.toggle('recipe-div-active');
     });
 
-    meal.appendChild(recipeDiv);
+    meal.append(recipeDiv);
     // globalFavBtn = favBtn;
 
     mealContainer.appendChild(meal);
