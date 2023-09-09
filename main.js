@@ -5,6 +5,7 @@ const favContainer = document.querySelector(".fav-container ul");
 const searchTerm = document.getElementById('search-term');
 const searchBtn = document.getElementById('search-btn');
 const logoBtn = document.querySelector('.logo');
+const mobContainer = document.querySelector('.mobile-container');
 
 
 getMeal();
@@ -96,7 +97,8 @@ function addMeal(randomMeal, random = true){
     }
     const measuresListItems = measures.map(measure => `<li>: ${measure}</li>`).join('');
 
-    meal.addEventListener("click", () => {
+    const mealHeader = meal.querySelector('.meal-header');
+    mealHeader.addEventListener("click", () => {
         recipeDiv.innerHTML = `
         <h4>Ingredients</h4>
         <div class='ingredients'>
@@ -160,6 +162,55 @@ function addMealFav(meal) {
     favMeal.innerHTML = `
     <li><div class="close-btn">x</div><img src=${meal.strMealThumb} alt="Buttered Chicken Image"><span>${meal.strMeal}</span></li>
     `
+
+    const ingredients = [];
+    for (let i = 1; i <= 25; i++) { 
+        const ingredient = meal[`strIngredient${i}`];
+
+        if (ingredient && ingredient.trim() !== "") {
+            ingredients.push(ingredient);
+        }
+    }
+    const ingredientsListItems = ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
+
+    const measures = [];
+    for (let i = 1; i <= 25; i++) { 
+        const measure = meal[`strMeasure${i}`];
+
+        if (measure && measure.trim() !== "") {
+            measures.push(measure);
+        }
+    }
+    const measuresListItems = measures.map(measure => `<li>: ${measure}</li>`).join('');
+
+    const favDiv = document.createElement('div');
+    favDiv.classList.add('fav-preview-container');
+    favDiv.innerHTML = `
+        <div class="fav-preview">
+            <h2>${meal.strMeal}</h2>
+            <img class="fav-img" src="${meal.strMealThumb}" alt="">
+            <h4>Ingredients</h4>
+            <div>
+                <ul>
+                    ${ingredientsListItems}
+                </ul>
+                <ul>
+                    ${measuresListItems}
+                </ul>
+            </div>
+            <h4>Instructions</h4>
+            <p>${meal.strInstructions}</p>
+        </div>
+    `
+    
+    favMeal.addEventListener('click', () => {
+        mobContainer.appendChild(favDiv);
+        mobContainer.style.height = (favDiv.clientHeight/6)+'rem';
+    });
+
+    favDiv.addEventListener('click', () => {
+        favDiv.remove();
+    });
 
     favContainer.appendChild(favMeal);
 

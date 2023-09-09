@@ -1,0 +1,29 @@
+@media (min-width: 320px) and (max-width: 375px) {
+    .mobile-container{
+        width: 320px;
+    }
+
+    header img{
+        width: 80px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+    .mobile-container{
+        width: 375px;
+    }
+
+    header img{
+        width: 90px;
+    }
+}
+
+@media (min-width: 425px){
+    .mobile-container{
+        width: 425px;
+    }
+
+    header img{
+        width: 100px;
+    }
+}
