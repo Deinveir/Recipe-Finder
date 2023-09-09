@@ -205,11 +205,12 @@ function addMealFav(meal) {
     
     favMeal.addEventListener('click', () => {
         mobContainer.appendChild(favDiv);
-        mobContainer.style.height = (favDiv.clientHeight/6)+'rem';
+        mobContainer.style.height = (favDiv.clientHeight)+"px";
     });
 
     favDiv.addEventListener('click', () => {
         favDiv.remove();
+        mobContainer.style.height = "auto";
     });
 
     favContainer.appendChild(favMeal);
