@@ -160,8 +160,10 @@ async function fetchFavMeals(){
 function addMealFav(meal) {
     const favMeal = document.createElement("div");
     favMeal.innerHTML = `
-    <li><div class="close-btn">x</div><img src=${meal.strMealThumb} alt="Buttered Chicken Image"><span>${meal.strMeal}</span></li>
+    <li><div class="close-btn">x</div><img class="fav-img" src=${meal.strMealThumb} alt="Buttered Chicken Image"><span>${meal.strMeal}</span></li>
     `
+
+    const favImg = favMeal.querySelector(".fav-img");
 
     const ingredients = [];
     for (let i = 1; i <= 25; i++) { 
@@ -203,7 +205,7 @@ function addMealFav(meal) {
         </div>
     `
     
-    favMeal.addEventListener('click', () => {
+    favImg.addEventListener('click', () => {
         mobContainer.appendChild(favDiv);
         mobContainer.style.height = (favDiv.clientHeight)+"px";
     });
